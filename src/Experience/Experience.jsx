@@ -17,7 +17,7 @@ const Experience = () => {
     },
   ];
   return (
-    <Box>
+    <Box mt={20}>
       <Typography
         component="div"
         fontSize={35}

@@ -6,17 +6,22 @@ import Objective from "./Objective";
 import { Expand } from "@mui/icons-material";
 import Experience from "../Experience/Experience";
 import TechStack from "../TechStack/TechStack";
+import Projects from "../Projects/Projects";
+import Education from "../Education/Education";
 
 const Home = () => {
   return (
-    <Box style={{ backgroundColor: "black" }}>
+    <Box style={{background:"#000" }}>
       {/* Your content goes here */}
 
       <Header />
-      <Box p={15}>
-        <Objective />
+      <Objective />
+      <Box px={25}>
+       
         <TechStack />
         <Experience />
+        <Projects/>
+        <Education/>
       </Box>
     </Box>
   );

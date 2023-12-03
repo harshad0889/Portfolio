@@ -13,7 +13,7 @@ const Header = () => {
   const matches = useMediaQuery("(max-width:600px)");
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: colors.primaryDark }}>
+    <AppBar position="absolute" sx={{ backgroundColor: "transparent", boxShadow:0}}  >
       <Toolbar>
         <IconButton edge="start" color="inherit" aria-label="menu">
           <Box
