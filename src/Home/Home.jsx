@@ -5,15 +5,19 @@ import Header from "../Header/Header";
 import Objective from "./Objective";
 import { Expand } from "@mui/icons-material";
 import Experience from "../Experience/Experience";
+import TechStack from "../TechStack/TechStack";
 
 const Home = () => {
   return (
-    <Box style={{  backgroundColor: 'black' }}>
-  {/* Your content goes here */}
- 
+    <Box style={{ backgroundColor: "black" }}>
+      {/* Your content goes here */}
+
       <Header />
-      <Objective />
-      <Experience/>
+      <Box p={15}>
+        <Objective />
+        <TechStack />
+        <Experience />
+      </Box>
     </Box>
   );
 };

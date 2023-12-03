@@ -5,10 +5,10 @@ const Objective = () => {
   return (
     <Box
       sx={{
-        height: "100vh",
+        height: "80vh",
       }}
     >
-      <Box p={10} display={"flex"}>
+      <Box  display={"flex"}>
         <Box display={"flex"} flex={1}>
           <Box flex={1} textAlign={"center"} justifyContent={"center"}>
             <Typography
@@ -49,10 +49,9 @@ const Objective = () => {
                   backgroundColor: "white",
                   color: "#000",
                   borderRadius: 48,
-                  pt: 2,
-                  pl: 3,
-                  pb: 2,
-                  pr: 3,
+                  px:2,
+                  py:3,
+                  
                   "&:hover": {
                     backgroundColor: "white",
                   },
