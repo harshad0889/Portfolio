@@ -8,20 +8,21 @@ import Experience from "../Experience/Experience";
 import TechStack from "../TechStack/TechStack";
 import Projects from "../Projects/Projects";
 import Education from "../Education/Education";
+import Footer from "../Components/Footer";
 
 const Home = () => {
   return (
-    <Box style={{background:"#000" }}>
+    <Box style={{ background: "#000" }}>
       {/* Your content goes here */}
 
       <Header />
       <Objective />
       <Box px={25}>
-       
         <TechStack />
         <Experience />
-        <Projects/>
-        <Education/>
+        <Projects />
+        <Education />
+        <Footer />
       </Box>
     </Box>
   );

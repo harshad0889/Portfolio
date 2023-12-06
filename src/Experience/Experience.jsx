@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-
+import { motion } from "framer-motion";
 const Experience = () => {
   const ExpArray = [
     {
@@ -17,18 +17,16 @@ const Experience = () => {
     },
   ];
   return (
-    <Box mt={20}>
+    <Box mt={20} id="Experience">
       <Typography
         component="div"
         fontSize={35}
         fontWeight={800}
         sx={{
-            backgroundImage:
-              "linear-gradient(180deg, #5BADFF 0%, #1373D1 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        
+          backgroundImage: "linear-gradient(180deg, #5BADFF 0%, #1373D1 100%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
         style={{ fontFamily: '"Poppins"' }}
         textAlign={"center"}
         textTransform={"uppercase"}
@@ -36,7 +34,19 @@ const Experience = () => {
         Experience
       </Typography>
       {ExpArray.map((item, index) => (
-        <Box mt={5}>
+        <Box
+          mt={5}
+          component={motion.div}
+          animate={{ x: 0 }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: index*3,delay:0.5 }}
+          variants={{
+            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: 10 },
+          }}
+        >
           <Box
             display={"flex"}
             justifyContent={"space-between"}
@@ -52,7 +62,6 @@ const Experience = () => {
               />
 
               <Typography
-                component="div"
                 fontSize={21}
                 fontWeight={600}
                 ml={2}

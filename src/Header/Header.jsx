@@ -6,14 +6,16 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Box, Hidden } from "@mui/material";
-import { colors } from "../Utils/colors";
+import { motion } from "framer-motion";
+import { HashLink } from "react-router-hash-link";
+
 const Header = () => {
-  const menus = ["Home", "Experience", "Education", "About us", "Contact us"];
-
-  const matches = useMediaQuery("(max-width:600px)");
-
+  const menus = ["Home", "Experience", "Projects","Education"];
   return (
-    <AppBar position="absolute" sx={{ backgroundColor: "transparent", boxShadow:0}}  >
+    <AppBar
+      position="absolute"
+      sx={{ backgroundColor: "transparent", boxShadow: 0 }}
+    >
       <Toolbar>
         <IconButton edge="start" color="inherit" aria-label="menu">
           <Box
@@ -24,22 +26,44 @@ const Header = () => {
           />
         </IconButton>
         {/* //--------center box--------- */}
-        <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
+        <Box
+          sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}
+          component={motion.div}
+        >
           <Hidden smDown>
             <Box
               sx={{ gap: 5, display: { xs: "none", sm: "none", md: "flex" } }}
             >
               {menus.map((item, index) => (
-                <Typography
-                  component="div"
-                  fontSize={15}
-                  fontWeight={400}
-                  
-                  style={{ fontFamily: '"Plus Jakarta Sans"',cursor:"pointer" }}
-                  //   style={{ fontFamily: '"Poppins", Arial' }}
+                <HashLink
+                  to={`/#${item}`}
+                  smooth
+                  style={{ textDecoration: "none" }}
                 >
-                  {item}
-                </Typography>
+                  {" "}
+                  <Typography
+                    component={motion.div}
+                    fontSize={15}
+                    fontWeight={400}
+                    color={"grey"}
+                    style={{
+                      fontFamily: '"Plus Jakarta Sans"',
+                      cursor: "pointer",
+                      textDecoration: "st",
+                    }}
+                    whileHover={{
+                      scale: 1.2,
+                      // textShadow: "0px 0px 3px rgb(255,255,255)",
+                      color: "#fff",
+                    }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    //   style={{ fontFamily: '"Poppins", Arial' }}
+                  >
+                    {item}{" "}
+                  </Typography>
+                </HashLink>
+
+                // </HashLink>
               ))}
             </Box>
           </Hidden>

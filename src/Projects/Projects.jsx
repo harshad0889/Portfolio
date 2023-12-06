@@ -43,7 +43,7 @@ const Projects = () => {
   ];
 
   return (
-    <Box mt={20}>
+    <Box mt={20} id="Projects">
       <Typography
         component="div"
         fontSize={35}

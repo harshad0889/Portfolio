@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import { motion } from "framer-motion";
 
 const TechStack = () => {
   const techStackArray = [
@@ -13,6 +14,7 @@ const TechStack = () => {
     "postgresql.png",
     "atom.png",
   ];
+
   return (
     <Box>
       <Typography
@@ -39,9 +41,26 @@ const TechStack = () => {
         alignItems={"center"}
         gap={2}
         flexWrap={"wrap"}
+        component={motion.div}
+        // initial={{ x: "-100vw" }}
+        animate={{ x: 0 }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 1, delay: 0.5 }}
+        variants={{
+          visible: { opacity: 1, y: 0 },
+          hidden: { opacity: 0, y: 50 },
+        }}
       >
         {techStackArray.map((item, index) => (
-          <Box key={index}>
+          <Box
+            key={index}
+            sx={{ cursor: "pointer" }}
+            component={motion.div}
+            whileHover={{ scale: 1.5 }}
+            transition={{ type:"tween",duratio:3 }}
+          >
             <Box
               component="img"
               sx={{ height: 50, width: 90, objectFit: "contain" }}

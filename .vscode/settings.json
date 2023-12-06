@@ -1,0 +1,8 @@
+{
+    "color-highlight.matchRgbWithNoFunction": false,
+    "color-highlight.markerType": "dot-before",
+    "color-highlight.enable": true,
+    "color-highlight.rgbWithNoFunctionLanguages": [
+        "*"
+    ]
+}
