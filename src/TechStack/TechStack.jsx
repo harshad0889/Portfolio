@@ -47,7 +47,7 @@ const TechStack = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        transition={{ duration: 1, delay: 0.5 }}
+        transition={{ duration: 1, delay: 0.2 }}
         variants={{
           visible: { opacity: 1, y: 0 },
           hidden: { opacity: 0, y: 50 },
@@ -59,7 +59,7 @@ const TechStack = () => {
             sx={{ cursor: "pointer" }}
             component={motion.div}
             whileHover={{ scale: 1.5 }}
-            transition={{ type:"tween",duratio:3 }}
+            transition={{ type:"tween",duratio:2 }}
           >
             <Box
               component="img"

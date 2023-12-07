@@ -1,20 +1,50 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import { motion } from "framer-motion";
+import Capsule from "../Components/Capsule";
 const Experience = () => {
   const ExpArray = [
-    {
-      companyName: "Software Engineer at Hidile LLP",
-      logo: "hidile-logo.webp",
-      duration: "June 2021 - July 2023",
-      desc: "As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.",
-    },
     {
       companyName: "Software Engineer at TechinWallet LLP",
       logo: "tw_logo.png",
       duration: "July 2023 - Present",
-      desc: "As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.",
+      desc: `Developed and maintained responsive websites using HTML, CSS, Mantine UI, TypeScript, and React.js.
+      Designed and implemented a robust backend infrastructure utilizing Node.js, Fastify, Prisma, and
+      PostgreSQL.
+      Built a React Native application using Expo and integrated API’s.
+      Enhanced website performance by implementing lazy loading and code minification.
+      Designed and integrated the admin part of the application.`,
+      techStack: [
+        "React js",
+        "Node js",
+        "React Native",
+        "Express js",
+        "HTML",
+        "CSS",
+      ],
     },
+    {
+      companyName: "Software Engineer at Hidile LLP",
+      logo: "hidile-logo.webp",
+      duration: "June 2021 - July 2023",
+      desc: `Designed and developed both front-end and back-end applications using HTML, CSS, React.js, Next.js,
+      Node.js, and ExpressJs.
+      Utilized Agile methodologies to enhance project management efficiency, fostering collaboration and
+      adaptability in a dynamic development environment.
+      Designed, integrated, and built mobile applications using React Native, focusing on creating user-friendly
+      interfaces.
+      Implemented UI mockups, integrated third-party React libraries, and managed/created Redux store data
+      for efficient state management.`,
+      techStack: [
+        "React js",
+        "Node js",
+        "React Native",
+        "Express js",
+        "HTML",
+        "CSS",
+      ],
+    },
+    
   ];
   return (
     <Box mt={20} id="Experience">
@@ -41,21 +71,21 @@ const Experience = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: index*3,delay:0.5 }}
+          transition={{ duration: index * 1.3, delay: 0.2 }}
           variants={{
             visible: { opacity: 1, y: 0 },
             hidden: { opacity: 0, y: 10 },
           }}
         >
           <Box
-            display={"flex"}
+            sx={{display:{xs:"block",sm:"block",md:"flex"}}}
             justifyContent={"space-between"}
             alignItems={"center"}
             key={index}
           >
-            <Box display={"flex"} alignItems={"center"}>
+            <Box sx={{display:{xs:"block",sm:"block",md:"flex"}}} alignItems={"center"}>
               <Box
-                component="img"
+                component="img" mr={2}
                 sx={{ height: 50, width: 90, objectFit: "contain" }}
                 alt="hello image"
                 src={item?.logo}
@@ -64,7 +94,7 @@ const Experience = () => {
               <Typography
                 fontSize={21}
                 fontWeight={600}
-                ml={2}
+                
                 color={"#fff"}
                 style={{ fontFamily: '"Poppins"' }}
                 textAlign={"justify"}
@@ -99,6 +129,11 @@ const Experience = () => {
             >
               {item?.desc}
             </Typography>
+          </Box>
+          <Box display={"flex"} flexWrap={"wrap"} mt={5} gap={2}>
+            {item?.techStack.map((tech, key) => (
+              <Capsule title={tech} />
+            ))}
           </Box>
         </Box>
       ))}

@@ -11,10 +11,22 @@ import React from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 import Ball from "../Components/Ball";
+import SocialRow from "../Components/SocialRow";
+import { HashLink } from "react-router-hash-link";
 
 const Objective = () => {
+  const bounceAnimation = {
+    y: [0, -10, -5, 0], // Bouncing motion along the Y-axis
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      ease: "easeInOut",
+      type: "tween",
+    },
+  };
   return (
-    <Box id="Objective"
+    <Box
+      id="Home"
       justifyContent={"center"}
       alignItems={"center"}
       sx={{
@@ -25,20 +37,32 @@ const Objective = () => {
         backgroundImage: `url(${"https://tamalsen.dev/wp-content/uploads/2021/07/tamalsen-home-cover.jpg"})`,
       }}
     >
+      <Box position={"absolute"} right={35} alignItems={"center"} top={"30%"}>
+        <SocialRow />
+      </Box>
+
       <Box
         display={"flex"}
         py={20}
         sx={{
-          backgroundImage: "linear-gradient(180deg,transparent 50%,#000 80%)",
+          backgroundImage:
+            "linear-gradient(180deg,transparent 65%,#000 80%),linear-gradient(0deg,transparent 70%,#000 100%)",
         }}
         height={"90%"}
       >
-         
+        {/* <motion.div animate={bounceAnimation} style={{position:"absolute", left:"50%"}}>
+            <Ball/>
+          </motion.div> */}
 
-        <Box flex={1} alignItems={"center"} textAlign={"center"} justifyContent={"center"}>
+        <Box
+          flex={1}
+          alignItems={"center"}
+          textAlign={"center"}
+          justifyContent={"center"}
+        >
           <Typography
             component={motion.div}
-            fontSize={"5vw"}
+            sx={{fontSize:{xs:"4vw", sm:"5vw",md:"6vw" }}}
             fontWeight={800}
             style={{ fontFamily: '"Poppins"' }}
             color={"#fff"}
@@ -53,7 +77,7 @@ const Objective = () => {
 
           <Typography
             component={motion.div}
-            fontSize={22}
+            sx={{fontSize:{xs:"2vw", sm:"2vw",md:"2vw" }}}
             fontWeight={500}
             style={{ fontFamily: '"Roboto Mono"' }}
             color={"#fff"}
@@ -62,13 +86,13 @@ const Objective = () => {
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: -30 }}
             transition={{
-              delay: 2,
+              delay: 0.8,
               duration: 1,
               type: "tamalsen",
               stiffness: 5,
             }}
           >
-            Software Engineer, Front end & App Developer.
+           &#60;Software Engineer, Front end & App Developer/&#62;.
           </Typography>
 
           {/* <Grow
@@ -89,7 +113,7 @@ const Objective = () => {
             </Typography>
           </Grow> */}
 
-          {false && (
+          {true && (
             <Box mt={5} display={"flex"} justifyContent={"center"} gap={5}>
               <Button
                 variant="contained"
@@ -105,13 +129,19 @@ const Objective = () => {
                   },
                 }}
               >
-                <Typography
-                  fontSize={18}
-                  style={{ fontFamily: '"Plus Jakarta Sans"' }}
-                  fontWeight={800}
+                <HashLink
+                  to={`/#footer`}
+                  smooth={true}
+                  style={{ textDecoration: "none",color:"#000" }}
                 >
-                  Get In Touch
-                </Typography>
+                  <Typography
+                    fontSize={"small"}
+                    style={{ fontFamily: '"Plus Jakarta Sans"',color:"inherit" }}
+                    fontWeight={800}
+                  >
+                    contact me
+                  </Typography>
+                </HashLink>
               </Button>
               <Button
                 variant="text"
@@ -123,13 +153,13 @@ const Objective = () => {
                   border: 2,
                   borderColor: "#fff",
                   px: 4,
-                  py: 2,
+                  py: 1.2,
                 }}
               >
                 <Typography
-                  fontSize={18}
+                  fontSize={"small"}
                   style={{ fontFamily: '"Plus Jakarta Sans"' }}
-                  fontWeight={800}
+                  fontWeight={600}
                   color={"#fff"}
                 >
                   Download CV
