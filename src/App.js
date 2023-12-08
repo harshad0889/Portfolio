@@ -5,7 +5,6 @@ import Home from "./Home/Home";
 import Header from "./Header/Header";
 import { useLocation } from "react-router-dom";
 import Education from "./Education/Education";
-import { ParallaxProvider } from "react-scroll-parallax";
 import ProjectSingle from "./Projects/ProjectSingle";
 function App() {
   const location = useLocation();
@@ -13,14 +12,14 @@ function App() {
   console.log("app.js", location);
   return (
     <>
-      <ParallaxProvider>
+      
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/header" element={<Header />} />
           <Route path="/education" element={<Education />} />
           <Route path="/project" element={<ProjectSingle />} />
         </Routes>
-      </ParallaxProvider>
+      
     </>
   );
 }

@@ -11,7 +11,6 @@ import Education from "../Education/Education";
 import Footer from "../Components/Footer";
 import Certification from "../Certification/Certification";
 import Achievements from "../Achievements/Achievements";
-import { useParallax, Parallax } from "react-scroll-parallax";
 import Topbutton from "../Components/Topbutton";
 import Ball from "../Components/Ball";
 const Home = () => {
