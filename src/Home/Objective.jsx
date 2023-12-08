@@ -34,7 +34,6 @@ const Objective = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
 
-        backgroundImage: `url(${"https://tamalsen.dev/wp-content/uploads/2021/07/tamalsen-home-cover.jpg"})`,
       }}
     >
       <Box position={"absolute"} right={35} alignItems={"center"} top={"30%"}>
@@ -50,9 +49,7 @@ const Objective = () => {
         }}
         height={"90%"}
       >
-        {/* <motion.div animate={bounceAnimation} style={{position:"absolute", left:"50%"}}>
-            <Ball/>
-          </motion.div> */}
+        
 
         <Box
           flex={1}
@@ -62,7 +59,7 @@ const Objective = () => {
         >
           <Typography
             component={motion.div}
-            sx={{fontSize:{xs:"4vw", sm:"5vw",md:"6vw" }}}
+            sx={{ fontSize: { xs: "4vw", sm: "5vw", md: "6vw" } }}
             fontWeight={800}
             style={{ fontFamily: '"Poppins"' }}
             color={"#fff"}
@@ -77,7 +74,7 @@ const Objective = () => {
 
           <Typography
             component={motion.div}
-            sx={{fontSize:{xs:"2vw", sm:"2vw",md:"2vw" }}}
+            sx={{ fontSize: { xs: "2vw", sm: "2vw", md: "2vw" } }}
             fontWeight={500}
             style={{ fontFamily: '"Roboto Mono"' }}
             color={"#fff"}
@@ -92,26 +89,8 @@ const Objective = () => {
               stiffness: 5,
             }}
           >
-           &#60;Software Engineer, Front end & App Developer/&#62;.
+            &#60;Software Engineer, Front end & App Developer/&#62;.
           </Typography>
-
-          {/* <Grow
-            in={true}
-            style={{ transformOrigin: "10 0 0 0" }}
-            {...(true ? { timeout: 3000 } : {})}
-          >
-            <Typography
-              component="div"
-              fontSize={22}
-              fontWeight={500}
-              style={{ fontFamily: '"Roboto Mono"' }}
-              color={"#fff"}
-              textTransform={"uppercase"}
-              letterSpacing={"2.2px"}
-            >
-              Software Engineer, Front end & App Developer.
-            </Typography>
-          </Grow> */}
 
           {true && (
             <Box mt={5} display={"flex"} justifyContent={"center"} gap={5}>
@@ -132,11 +111,14 @@ const Objective = () => {
                 <HashLink
                   to={`/#footer`}
                   smooth={true}
-                  style={{ textDecoration: "none",color:"#000" }}
+                  style={{ textDecoration: "none", color: "#000" }}
                 >
                   <Typography
                     fontSize={"small"}
-                    style={{ fontFamily: '"Plus Jakarta Sans"',color:"inherit" }}
+                    style={{
+                      fontFamily: '"Plus Jakarta Sans"',
+                      color: "inherit",
+                    }}
                     fontWeight={800}
                   >
                     contact me

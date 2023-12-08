@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import Title from "./Title";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const socialArray = [
@@ -39,11 +40,20 @@ const Footer = () => {
           alignItems={"center"}
           mt={10}
           gap={10}
-          
         >
           {socialArray.map((item, index) =>
             item.name == "phone" ? (
-              <Box display={"flex"} alignItems={"center"} gap={1} mt={2}>
+              <Box
+                display={"flex"}
+                alignItems={"center"}
+                gap={1}
+                mt={2}
+                component={motion.div}
+                animate={{ scale: 1.1 }}
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.2 }}
+                transition={{ type: "tween" }}
+              >
                 <>{item?.icon}</>
                 <Typography color={"#fff"}>{item.value}</Typography>{" "}
               </Box>
@@ -51,10 +61,19 @@ const Footer = () => {
               <Link
                 to={item?.link}
                 target="_blank"
-                style={{ textDecoration: "none", }}
-                
+                style={{ textDecoration: "none" }}
               >
-                <Box display={"flex"} alignItems={"center"} gap={1} mt={2}>
+                <Box
+                  display={"flex"}
+                  alignItems={"center"}
+                  gap={1}
+                  mt={2}
+                  component={motion.div}
+                  animate={{ scale: 1.1 }}
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ type: "tween", }}
+                >
                   <>{item?.icon}</>
                   <Typography color={"#fff"}>{item.value}</Typography>{" "}
                 </Box>
