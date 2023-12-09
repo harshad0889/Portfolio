@@ -63,11 +63,11 @@ const Certification = () => {
                 alignItems={"center"}
                 key={index}
               >
-                <Box display={"flex"} alignItems={"flex-start"}>
+                <Box sx={{display:{xs:"block",sm:"block",md:"flex"}}} alignItems={"flex-start"}>
                   <Box
                     component="img"
                     sx={{  width: 70, objectFit: "fill",borderRadius:2 }}
-                    alt="hello image"
+                    alt="certification image"
                     src={item?.logo}
                     mr={2}
                   />

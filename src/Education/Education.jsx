@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import { colors } from "../Utils/colors";
 
 const Education = () => {
   const EduArray = [
@@ -52,70 +53,64 @@ const Education = () => {
             hidden: { opacity: 0, y: 50 },
           }}
         >
-          <Box
-            display={"flex"}
-            justifyContent={"space-between"}
-            alignItems={"flex-start"}
-            key={index}
-            flex={1}
-          >
-            <Box display={"flex"} alignItems={"flex-start"} flex={6}>
+         
+            <Box
+              sx={{ display: { xs: "block", sm: "block", md: "flex" } }}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+              key={index}
+            >
               <Box
-                component="img"
-                sx={{ width: 60, objectFit: "fill", borderRadius: 2 }}
-                alt="hello image"
-                src={item?.logo}
-                mr={4}
-              />
+                sx={{ display: { xs: "block", sm: "block", md: "flex" } }}
+                alignItems={"center"}
+              >
+                <Box
+                  component="img"
+                  mr={2}
+                  sx={{  width: 70, objectFit: "fill",borderRadius:2 }}
+                  alt="hello image"
+                  src={item?.logo}
+                />
 
-              <Box>
                 <Typography
                   fontSize={21}
                   fontWeight={600}
-                  mb={1}
-                  color={"#fff "}
+                  color={colors.white}
                   style={{ fontFamily: '"Poppins"' }}
                   textAlign={"justify"}
                 >
                   {item?.course}
                 </Typography>
-                <Typography
-                  component="div"
-                  fontSize={18}
-                  fontWeight={500}
-                  color={"#e2e2e2"}
-                  style={{ fontFamily: '"Poppins"' }}
-                  textAlign={"justify"}
-                >
-                  {item?.college}
-                </Typography>
+              </Box>
+              <Box>
                 <Typography
                   component="div"
                   fontSize={14}
                   fontWeight={400}
-                  color={"#8491A0"}
+                  color={colors.defaultText}
                   style={{ fontFamily: '"Poppins"' }}
                   textAlign={"justify"}
-                  pr={5}
-                  mt={1}
                 >
-                  {item?.desc}
+                  {item?.year}
                 </Typography>
               </Box>
             </Box>
-            <Box flex={1}>
+
+            {/* //-------desc area--------------- */}
+            <Box>
               <Typography
                 component="div"
                 fontSize={14}
                 fontWeight={400}
+                mt={2}
                 color={"#8491A0"}
                 style={{ fontFamily: '"Poppins"' }}
                 textAlign={"justify"}
               >
-                {item?.year}
+                {item?.desc}
               </Typography>
             </Box>
-          </Box>
+          
         </Box>
       ))}
     </Box>

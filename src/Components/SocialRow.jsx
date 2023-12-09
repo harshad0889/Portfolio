@@ -48,17 +48,15 @@ const SocialRow = () => {
   return (
     <>
       <Box
-      component={motion.div}
-      animate={{x:0}}
-      initial={{x:200,opacity:0}}
-      whileInView={{x:0,opacity:1}}
-      transition={{duration:1,type:"tween"}}
+        component={motion.div}
+        animate={{ x: 0 }}
+        initial={{ x: 200, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, type: "tween" }}
         display={"flex"}
-        flexDirection={"column"}
+        sx={{flexDirection:{md:"column",xs:"column",sm:"column"}}}
         rowGap={5}
-        sx={{ cursor: "pointer" }}
-
-        
+        columnGap={3}
       >
         {social.map((item, index) => (
           <>

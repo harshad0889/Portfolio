@@ -39,16 +39,16 @@ const Header = () => {
   return (
     <AppBar
       position="fixed"
-      sx={{ backgroundColor: scrolled ? "#000" : "transparent", boxShadow: 0 }}
+      sx={{ backgroundColor: scrolled ? "#181818" : "transparent", boxShadow: 0 }}
     >
       <Toolbar>
         <IconButton edge="start" color="inherit" aria-label="menu">
           <HashLink to={`/#Home`} smooth={true}>
             <Box
               component="img"
-              sx={{ height: 60, width: 60, objectFit: "cover" }}
+              sx={{ height: 40, width: 40, objectFit: "cover",mt:2 }}
               alt="hello image"
-              src="coffee_coder.jpg"
+              src="MH_logo_white.png"
               
             />
           </HashLink>

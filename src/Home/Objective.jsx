@@ -24,6 +24,14 @@ const Objective = () => {
       type: "tween",
     },
   };
+
+  const handleDownload = () => {
+    window.open(
+      "https://drive.google.com/file/d/1My3mEwFFHy3O8eGBZHkM-_9DJHxH2isX/view?usp=sharing",
+      "_blank"
+    );
+  };
+
   return (
     <Box
       id="Home"
@@ -33,10 +41,9 @@ const Objective = () => {
         height: "100vh",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-
       }}
     >
-      <Box position={"absolute"} right={35} alignItems={"center"} top={"30%"}>
+      <Box  position={"absolute"}  right={"3%"}   alignItems={"center"} sx={{top:{md:"30%",sm:"30%",xs:"20%"}}}>
         <SocialRow />
       </Box>
 
@@ -45,12 +52,10 @@ const Objective = () => {
         py={20}
         sx={{
           backgroundImage:
-            "linear-gradient(180deg,transparent 65%,#000 80%),linear-gradient(0deg,transparent 70%,#000 100%)",
+            "linear-gradient(180deg,transparent 65%,#181818 80%),linear-gradient(0deg,transparent 70%,#181818 100%)",
         }}
         height={"90%"}
       >
-        
-
         <Box
           flex={1}
           alignItems={"center"}
@@ -59,7 +64,7 @@ const Objective = () => {
         >
           <Typography
             component={motion.div}
-            sx={{ fontSize: { xs: "4vw", sm: "5vw", md: "6vw" } }}
+            sx={{ fontSize: { xs: "26px", sm: "5vw", md: "6vw" } }}
             fontWeight={800}
             style={{ fontFamily: '"Poppins"' }}
             color={"#fff"}
@@ -74,7 +79,7 @@ const Objective = () => {
 
           <Typography
             component={motion.div}
-            sx={{ fontSize: { xs: "2vw", sm: "2vw", md: "2vw" } }}
+            sx={{ fontSize: { xs: "6px", sm: "10px", md: "20px" } }}
             fontWeight={500}
             style={{ fontFamily: '"Roboto Mono"' }}
             color={"#fff"}
@@ -93,7 +98,7 @@ const Objective = () => {
           </Typography>
 
           {true && (
-            <Box mt={5} display={"flex"} justifyContent={"center"} gap={5}>
+            <Box mt={5} display={"flex"} justifyContent={"center"} alignItems={"center"} gap={5} sx={{flexDirection:{md:"row",xs:"column",sm:"column"}}}>
               <Button
                 variant="contained"
                 sx={{
@@ -101,8 +106,7 @@ const Objective = () => {
                   color: "#000",
                   borderRadius: 48,
                   px: 4,
-                  py: 0,
-
+                  py: 1.2,
                   "&:hover": {
                     backgroundColor: "white",
                   },
@@ -137,6 +141,7 @@ const Objective = () => {
                   px: 4,
                   py: 1.2,
                 }}
+                onClick={handleDownload}
               >
                 <Typography
                   fontSize={"small"}

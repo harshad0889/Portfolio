@@ -31,7 +31,7 @@ const Home = () => {
     };
   }, [showTopButton]);
   return (
-    <Box style={{ background: "#000" }}>
+    <Box style={{ background: "#181818" }}>
       {/* Your content goes here */}
       <Header />
       <Objective />
