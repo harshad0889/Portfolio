@@ -2,10 +2,11 @@ import { ArrowCircleUp } from "@mui/icons-material";
 import { Box, Tooltip } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
+import { colors } from "../Utils/colors";
 
 const Topbutton = () => {
   const bounceAnimation = {
-    y: [0, -10, -5, 0], // Bouncing motion along the Y-axis
+    y: [0, -4, -2, 0], // Bouncing motion along the Y-axis
     transition: {
       duration: 1.5,
       repeat: Infinity,
@@ -20,18 +21,18 @@ const Topbutton = () => {
     <Box
       component={motion.div}
       position={"fixed"}
-      top={"80vh"}
+      top={"90vh"}
       right={"2%"}
-      animate={bounceAnimation}
+      // animate={bounceAnimation}
       onClick={scrollToTop}
       zIndex={999}
     >
       <Tooltip
         title="Scroll to Top"
-        sx={{ backgroundColor: "black", color: "#fff" }}
+        sx={{ backgroundColor: colors.offDark, color: "#fff" }}
       >
         <ArrowCircleUp
-          style={{ color: "#f2f2f2", fontSize: "45px", cursor: "pointer" }}
+          style={{ color: colors.white, fontSize: "30px", cursor: "pointer" }}
         />
       </Tooltip>
     </Box>
